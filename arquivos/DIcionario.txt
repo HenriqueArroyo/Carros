@@ -1,0 +1,76 @@
+**Tabela Agencia:**
+- NUM_AGENCIA: Número da agência (chave primária)
+- CONTATO: Informação de contato da agência
+- ENDERECO: Endereço da agência
+- CIDADE: Cidade da agência
+- ESTADO: Estado da agência
+
+**Tabela Carro:**
+- ID_CARRO: Identificação do carro (chave primária)
+- MODELO: Modelo do carro
+- ANO: Ano do carro
+- PLACA: Placa do carro
+- TIPO: Tipo do carro
+- DISPONIBILIDADE: Disponibilidade do carro
+- MARCA: Marca do carro
+
+**Tabela Cliente:**
+- ID_CLIENTE: Identificação do cliente (chave primária)
+- TELEFONE: Número de telefone do cliente
+- NOME: Nome do cliente
+- SOBRENOME: Sobrenome do cliente
+- ENDERECO: Endereço do cliente
+- CIDADE: Cidade do cliente
+- ESTADO: Estado do cliente
+- EMAIL: Endereço de e-mail do cliente
+- ID_PAGAMENTO: Identificação do pagamento associado ao cliente
+
+**Tabela Funcionarios:**
+- ID_FUNCIONARIO: Identificação do funcionário (chave primária)
+- NOME: Nome do funcionário
+- SOBRENOME: Sobrenome do funcionário
+- CARGO: Cargo do funcionário
+- DATA_CONTRATACAO: Data de contratação do funcionário
+- SALARIO: Salário do funcionário
+- NUM_AGENCIA: Número da agência à qual o funcionário está associado (chave estrangeira referenciando a tabela Agencia)
+
+**Tabela Pagamento:**
+- ID_PAGAMENTO: Identificação do pagamento (chave primária)
+- VALOR: Valor do pagamento
+- DATA_PAGAMENTO: Data do pagamento
+- FORMA_PAGAMENTO: Forma de pagamento
+- STATUS_PAGAMENTO: Status do pagamento
+- ID_COMPROVANTE: Identificação do comprovante associado ao pagamento
+- COMPROVANTE: Texto do comprovante (1)
+
+**Tabela Manutencao:**
+- ID_MANUTENCAO: Identificação da manutenção (chave primária)
+- CUSTO: Custo da manutenção
+- DATA_MANUTENCAO: Data da manutenção
+- ICM: Índice de manutenção
+- TIPO_MANUTENCAO: Tipo de manutenção
+- DESCRICAO: Descrição da manutenção
+
+**Tabela Feedback:**
+- ID_FEEDBACK: Identificação do feedback (chave primária)
+- DATA_FEEDBACK: Data do feedback
+- COMENTARIO: Comentário associado ao feedback
+- AVALIACAO: Avaliação do feedback
+
+**Tabela Locacao:**
+- ID_LOCALIZACAO: Identificação da locação (chave primária)
+- DATA_LOCACAO: Data de locação
+- DATA_DEVOLUCAO: Data de devolução
+- VALOR_TOTAL: Valor total da locação
+- ID_CLIENTE: Identificação do cliente associado à locação (chave estrangeira referenciando a tabela Cliente)
+- ID_CARRO: Identificação do carro associado à locação (chave estrangeira referenciando a tabela Carro)
+
+**Tabela Recebe:**
+- ID_MANUTENCAO: Identificação da manutenção (chave estrangeira referenciando a tabela Manutencao)
+- ID_CARRO: Identificação do carro (chave estrangeira referenciando a tabela Carro)
+
+**Tabela Envia:**
+- ID_ENVIA: Identificação do envio (chave primária)
+- OBSERVACAO: Observação associada ao envio
+- ID_CLIENTE: Identificação do cliente associado ao envio (chave estrangeira referenciando a tabela Cliente)
+- ID_FEEDBACK: Identificação do feedback associado ao envio (chave estrangeira referenciando a tabela Feedback)
