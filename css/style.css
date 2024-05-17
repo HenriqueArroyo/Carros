@@ -187,3 +187,53 @@ border-radius: 8px;
 #radio4:checked ~ .navigation-auto .auto-btn4{
     background-color: #fff;
 }
+
+/* ------------------------------------ */
+
+#titulo {
+    margin-left: 10vh;
+    margin-top: 10vh;
+
+}
+
+
+.catalago {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.catalago div {
+    margin-top: 10vh;
+    border: 2px solid black;
+    height: 30vh; 
+    width: 30vh;
+    border-radius: 20px;
+}
+
+.catalago img{
+    width: 30vh;;
+}
+
+.catalago h4{
+    font-size: 2.5vh;
+    margin-left: 6dvh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.catalago h6{
+    color: green;
+    font-size: 2vh;
+    position: relative;
+    bottom: 5vh;
+    left: 6.4vh;
+}
+
+.catalago div:hover{
+    transform: scale(1.15);
+    transition: 1s;
+}
