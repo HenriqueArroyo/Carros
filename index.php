@@ -62,6 +62,7 @@
                <label for="radio4" class="manual-btn"></label>
         </div>
         </div>
+        <hr>
         <h1 id="titulo">Catálago de Carros</h1>
         <div id="catalago" class="catalago">
            

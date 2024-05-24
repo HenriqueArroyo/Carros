@@ -93,6 +93,25 @@ CREATE TABLE Envia (
     FOREIGN KEY(ID_FEEDBACK) REFERENCES Feedback (ID_FEEDBACK)
 );
 
+CREATE TABLE Devolucoes (
+    ID_DEVOLUCAO SERIAL PRIMARY KEY,
+    ID_LOCACAO INT,
+    DATA_DEVOLUCAO DATE NOT NULL,
+    CONDICAO_VEICULO VARCHAR(100),
+    CUSTOS_ADICIONAIS NUMERIC,
+    FOREIGN KEY (ID_LOCACAO) REFERENCES Locacao (ID_LOCALIZACAO)
+);
+
+CREATE TABLE Seguros (
+    ID_SEGURO SERIAL PRIMARY KEY,
+    ID_CARRO INT,
+    SEGURADORA VARCHAR(100),
+    TIPO_SEGURO VARCHAR(50),
+    COBERTURA TEXT,
+    FOREIGN KEY (ID_CARRO) REFERENCES Carro (ID_CARRO)
+);
+
+
 -- Inserts para a tabela Agencia
 INSERT INTO Agencia (ENDERECO, CIDADE, CONTATO, ESTADO) VALUES 
 ('123 Main Street', 'New York', '123-456-7890', 'NY'),
@@ -351,6 +370,56 @@ INSERT INTO Envia (OBSERVACAO, ID_CLIENTE, ID_FEEDBACK) VALUES
 ('Carro em bom estado, atendimento poderia ser melhor.', 18, 18),
 ('Ótimo atendimento, carro em ótimas condições.', 19, 19),
 ('Demorou para entregar o carro, mas o serviço foi bom.', 20, 20);
+
+
+-- Inserts para a tabela Devolucoes
+INSERT INTO Devolucoes (ID_LOCACAO, DATA_DEVOLUCAO, CONDICAO_VEICULO, CUSTOS_ADICIONAIS) VALUES
+(1, '2024-04-05', 'Bom estado', NULL),
+(2, '2024-04-10', 'Leves arranhões na carroceria', 50.00),
+(3, '2024-04-15', 'Sem danos aparentes', NULL),
+(4, '2024-04-20', 'Leve amassado na porta do passageiro', 80.00),
+(5, '2024-04-25', 'Sem danos, porém sujo', 30.00),
+(6, '2024-04-30', 'Leve odor de fumaça no interior', 40.00),
+(7, '2024-05-05', 'Pequeno risco no para-choque dianteiro', 60.00),
+(8, '2024-05-10', 'Sem danos aparentes', NULL),
+(9, '2024-05-15', 'Arranhões na pintura', 70.00),
+(10, '2024-05-20', 'Amassado no capô', 100.00),
+(11, '2024-05-30', 'Bom estado', NULL),
+(12, '2024-06-01', 'Pequenos arranhões laterais', 45.00),
+(13, '2024-06-05', 'Sem danos, porém sujo', 35.00),
+(14, '2024-06-10', 'Leve risco no para-brisa', 55.00),
+(15, '2024-06-15', 'Pequeno amassado na porta do motorista', 75.00),
+(16, '2024-06-20', 'Sem danos aparentes', NULL),
+(17, '2024-07-03', 'Arranhões na carroceria', 65.00),
+(18, '2024-07-08', 'Leves danos no para-choque traseiro', 85.00),
+(19, '2024-07-13', 'Bom estado', NULL),
+(20, '2024-07-18', 'Leves arranhões na porta traseira esquerda', 50.00);
+
+-- Inserts para a tabela Seguros
+INSERT INTO Seguros (ID_CARRO, SEGURADORA, TIPO_SEGURO, COBERTURA) VALUES
+(1, 'Seguradora A', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(2, 'Seguradora B', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(3, 'Seguradora C', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(4, 'Seguradora D', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(5, 'Seguradora E', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(6, 'Seguradora F', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(7, 'Seguradora G', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(8, 'Seguradora H', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(9, 'Seguradora I', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(10, 'Seguradora J', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(11, 'Seguradora A', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(12, 'Seguradora B', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(13, 'Seguradora C', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(14, 'Seguradora D', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(15, 'Seguradora E', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(16, 'Seguradora F', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(17, 'Seguradora G', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(18, 'Seguradora H', 'Seguro Parcial', 'Cobre danos parciais ao veículo'),
+(19, 'Seguradora I', 'Seguro Total', 'Cobre danos totais ao veículo'),
+(20, 'Seguradora J', 'Seguro Parcial', 'Cobre danos parciais ao veículo');
+
+
+
 
 
 -- Atividade 1
@@ -670,6 +739,40 @@ SELECT SUM(VALOR)
 FROM Pagamento
 WHERE DATA_PAGAMENTO BETWEEN '2024-01-01' AND '2024-03-31';
 
+
+
+
+-- Atividade 24/05
+
+SELECT *
+FROM Cliente;
+
+-- Exiba todos os funcionários da locadora.
+SELECT *
+FROM Funcionarios;
+
+-- Encontre os clientes que alugaram um carro específico.
+SELECT c.*
+FROM Cliente c
+JOIN Locacao l ON c.ID_CLIENTE = l.ID_CLIENTE
+WHERE l.ID_CARRO = 2;
+
+-- Liste os carros alugados por um cliente específico.
+SELECT ca.*
+FROM Carro ca
+JOIN Locacao l ON ca.ID_CARRO = l.ID_CARRO
+WHERE l.ID_CLIENTE = 1;
+
+-- Liste todos os clientes e os carros que eles alugaram, incluindo clientes que não realizaram nenhum aluguel.
+SELECT c.*, l.*
+FROM Cliente c
+LEFT JOIN Locacao l ON c.ID_CLIENTE = l.ID_CLIENTE;
+
+
+-- Exiba todas as reservas feitas, incluindo aquelas sem carros reservados.
+SELECT c.*, l.*
+FROM Cliente c
+RIGHT JOIN Locacao l ON c.ID_CLIENTE = l.ID_CLIENTE;
 
 
 

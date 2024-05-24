@@ -12,7 +12,7 @@
     <nav>
         <img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo">
         <div class="link">
-
+         <a href="/index.php" id="registrar">Sair</a>
          
         </div>
     </nav>
@@ -61,6 +61,7 @@
                <label for="radio4" class="manual-btn"></label>
         </div>
         </div>
+        <hr>
         <h1 id="titulo">Catálago de Carros</h1>
         <div class="catalago">
            

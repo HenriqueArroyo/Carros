@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastroCliente.css">
     <title>Cadastro de Cliente</title>
 </head>
 <body>
-    <h1>Cadastro de Cliente</h1>
+
     <form method="POST" action="processa_cadastro.php">
+        <h1>Cadastro Cliente</h1>
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br>
 
@@ -33,6 +35,10 @@
         <input type="password" name="senha" id="senha">
 
         <input type="submit" value="Cadastrar">
+
+        <a href="loginFun.php">Acesso para Funcionários</a>
     </form>
+
+    <a href="index.php"><button id="voltar"  type="submit">Voltar</button></a>
 </body>
 </html>
