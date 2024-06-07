@@ -10,10 +10,11 @@
 
 <body>
 <?php include_once 'functions.php'; ?>
-    <?php navbarFuncionario(); ?>
+    <?php navbarLogado(); ?>
 
-    
-      
+    <section>
+ 
+    </section>
     <footer>
     
     </footer>

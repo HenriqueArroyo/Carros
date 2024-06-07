@@ -1,3 +1,6 @@
+<?php 
+require 'conectaBD.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

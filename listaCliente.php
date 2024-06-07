@@ -7,24 +7,6 @@ $senha = 'postgres';
 
 $msg = '';
 
-// Verifica se foi solicitada a exclusão de um cliente
-if (isset($_GET['delete'])) {
-    $cliente_id = $_GET['delete'];
-    
-    try {
-        // Exclui o cliente com o ID fornecido
-        $sql_delete = "DELETE FROM cliente WHERE id_cliente = :id";
-        $stmt = $pdo->prepare($sql_delete);
-        $stmt->execute(['id' => $cliente_id]);
-        
-        // Define mensagem de sucesso
-        $msg = 'Cliente excluído com sucesso.';
-    } catch (PDOException $e) {
-        // Caso ocorra algum erro
-        $msg = 'Erro ao excluir cliente: ' . $e->getMessage();
-    }
-}
-
 try {
     // Conexão com o banco de dados
     $pdo = new PDO(
@@ -33,6 +15,19 @@ try {
         $senha,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
+
+    // Verifica se foi solicitada a exclusão de um cliente
+    if (isset($_GET['delete'])) {
+        $cliente_id = $_GET['delete'];
+
+        // Exclui o cliente com o ID fornecido
+        $sql_delete = "DELETE FROM cliente WHERE id_cliente = :id";
+        $stmt = $pdo->prepare($sql_delete);
+        $stmt->execute(['id' => $cliente_id]);
+
+        // Define mensagem de sucesso
+        $msg = 'Cliente excluído com sucesso.';
+    }
 
     // Consulta SQL para selecionar todos os clientes
     $sql = "SELECT * FROM cliente";
@@ -67,19 +62,9 @@ try {
     </style>
 </head>
 <body>
-<nav>
-        <img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo">
-        <div class="link">
-         <a href="/index.php" id="registrar">Sair</a>
-         
-        </div>
-    </nav>
-    <div class="nav2">
-        <a href="">Pedidos</a>
-        <a href="/listaCliente.php">Clientes</a>
-        <a href="">Funcionarios</a>
-        <a href="">Carros</a>
-    </div>
+<?php include_once 'functions.php'; ?>
+    <?php navbarFuncionario(); ?>
+    
     <h1>Lista de Clientes</h1>
     <?php if (!empty($msg)) : ?>
         <p><?php echo $msg; ?></p>

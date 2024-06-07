@@ -9,20 +9,8 @@
 </head>
 
 <body>
-    <nav>
-        <img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo">
-        <div class="link">
-
-            <a id="login" href="login.php">Entrar</a>
-            <a id="registrar" href="cadastro.php">Registrar</a>
-        </div>
-    </nav>
-    <div class="nav2">
-        <a href="cadastro.php">Alugar</a>
-        <a href="#catalago">Catálago</a>
-        <a href="">Contato</a>
-        <a href="">Sobre</a>
-    </div>
+<?php include_once 'functions.php'; ?>
+    <?php navbarPadrao(); ?>
 
     <section >
         <div class="slider">
@@ -68,14 +56,14 @@
            
 
 
-    <a href="">    <div class="car1">
+    <a href="/login.php">    <div class="car1">
            <img src="/img/honda-civic.webp"
             alt="">
             <h4>Honda Civic</h4>
             <h6>R$ 1.000 a diária</h6>
          </div></a> 
           
-      <a href="">  <div class="car2">
+      <a href="/login.php">  <div class="car2">
             <img src="/img/fiat-palio.webp"
             alt="">
             <h4>Fiat Palio</h4>
@@ -83,7 +71,7 @@
           </div></a>  
 
           
-       <a href=""> <div class="car3">
+       <a href="/login.php"> <div class="car3">
             <img src="/img/ford-ecosport.webp"
             alt="">
             <h4>Ford Ecosport</h4>
@@ -91,7 +79,7 @@
          </div></a> 
         </div>
         <div class="catalago">
-           <a href=""><div class="car4">
+           <a href="/login.php"><div class="car4">
             <img src="/img/honda-fit.webp"
             alt="">
             <h4>Honda Fit</h4>
@@ -99,14 +87,14 @@
             </div></a> 
   
             
-          <a href=""><div class="car5">
+          <a href="/login.php"><div class="car5">
             <img src="/img/hyundai-hb20.webp"
             alt="">
             <h4>Hyundai HB20</h4>
             <h6>R$1400 a diária</h6>
            </div></a> 
             
-          <a href=""> <div class="car6">
+          <a href="/login.php"> <div class="car6">
             <img src="/img/toyota-corolla.webp"
             alt="">
             <h4>Toyota Corolla</h4>

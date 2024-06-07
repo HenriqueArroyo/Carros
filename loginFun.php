@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Funcionário</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<?php include_once 'functions.php'; ?>
+    <?php navbarPadrao(); ?>
     <h1>Login - Funcionário</h1>
     <?php
     if(isset($_GET['msgErro'])) {

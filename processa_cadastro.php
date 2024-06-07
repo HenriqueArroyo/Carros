@@ -1,5 +1,5 @@
 <?php 
-require_once 'conectaBD.php';
+require 'conectaBD.php';
 
 if (!empty($_POST)) {
     // Está chegando dados por POST e então posso tentar inserir no banco
