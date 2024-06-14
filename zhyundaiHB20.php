@@ -13,7 +13,20 @@
     <?php navbarLogado(); ?>
 
     <section>
- 
+ <div class="border">
+    <img id="front" src="/img/front-hb20.avif" alt="">
+    <img id="back" src="/img/back-hb20.avif" alt="">
+    <br>
+    <div class="info">
+    <h3>Hyundai HB20</h3>
+    <p>Ano: 2019 </p>
+    <p>Modelo: Hatchback</p>
+    <p>Preço: R$ 1.400</p>
+    <p>Situação: Disponível</p>
+    
+  <a href="/cadastrarLocacao.php"> <button type="submit">Alugar</button></a>
+  </div>
+ </div>
     </section>
     <footer>
     

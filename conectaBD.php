@@ -249,6 +249,60 @@ try {
 
     }
 
+    // Criação da tabela funcionario
+    $sql_Locacao = "CREATE TABLE IF NOT EXISTS Locacao (
+        ID_LOCACAO SERIAL PRIMARY KEY,
+        DATA_LOCACAO DATE NOT NULL,
+        DATA_DEVOLUCAO DATE NOT NULL,
+        VALOR_TOTAL NUMERIC NOT NULL,
+        ID_CLIENTE INT,
+        ID_CARRO INT,
+        FOREIGN KEY(ID_CLIENTE) REFERENCES Cliente (ID_CLIENTE),
+        FOREIGN KEY(ID_CARRO) REFERENCES Carro (ID_CARRO)
+    )";
+     $pdo->exec($sql_Locacao);
+
+       // Verificar se há funcionários na tabela
+    $sql_check_locacao = "SELECT COUNT(*) FROM funcionario";
+    $stmt_check_locacao = $pdo->query($sql_check_locacao);
+    $locacao_existe = $stmt_check_locacao->fetchColumn();
+
+     if ($locacao_existe == 0) {
+    
+        $sql_inserir_locacao = " INSERT INTO locacao (ID_CLIENTE, ID_CARRO, DATA_LOCACAO, DATA_DEVOLUCAO, VALOR_TOTAL)
+        VALUES (1, 1, '2018-06-01', '2018-06-07', 700.00),
+               (2, 2, '2018-07-02', '2018-07-08', 800.00),
+               (3, 3, '2018-08-03', '2018-08-09', 900.00),
+               (4, 4, '2018-09-04', '2018-09-10', 1000.00),
+               (5, 5, '2018-10-05', '2018-10-11', 1100.00),
+               (6, 6, '2018-11-06', '2018-11-12', 1200.00),
+               (7, 7, '2018-12-07', '2018-12-13', 1300.00),
+               (8, 8, '2019-01-08', '2019-01-14', 1400.00),
+               (9, 9, '2019-02-09', '2019-02-15', 1500.00),
+               (10, 10, '2019-03-10', '2019-03-16', 1600.00),
+               (11, 11, '2019-04-11', '2019-04-17', 1700.00),
+               (12, 12, '2019-05-12', '2019-05-18', 1800.00),
+               (13, 13, '2019-06-13', '2019-06-19', 1900.00),
+               (14, 14, '2019-07-14', '2019-07-20', 2000.00),
+               (15, 15, '2019-08-15', '2019-08-21', 2100.00),
+               (16, 16, '2019-09-16', '2019-09-22', 2200.00),
+               (17, 17, '2019-10-17', '2019-10-23', 2300.00),
+               (18, 18, '2019-11-18', '2019-11-24', 2400.00),
+               (19, 19, '2019-12-19', '2019-12-25', 2500.00),
+               (20, 20, '2020-01-20', '2020-01-26', 2600.00),
+               (21, 1, '2020-02-21', '2020-02-27', 2700.00),
+               (22, 2, '2020-03-22', '2020-03-28', 2800.00),
+               (23, 3, '2020-04-23', '2020-04-29', 2900.00),
+               (24, 4, '2020-05-24', '2020-05-30', 3000.00),
+               (25, 5, '2020-06-25', '2020-07-01', 3100.00),
+               (26, 6, '2020-07-26', '2020-08-02', 3200.00),
+               (27, 7, '2020-08-27', '2020-09-03', 3300.00),
+               (28, 8, '2020-09-28', '2020-10-04', 3400.00),
+               (29, 9, '2020-10-29', '2020-11-05', 3500.00),
+               (30, 10, '2020-11-30', '2020-12-06', 3600.00); ";
+            $pdo->exec($sql_inserir_locacao);
+    }
+
  
 } catch (PDOException $e) {
     echo "Falha ao conectar ao banco de dados. <br/>";

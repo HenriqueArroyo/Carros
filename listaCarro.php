@@ -25,6 +25,16 @@
 <?php navbarFuncionario(); ?>
 
 <h2>Lista de Carros</h2>
+<h3>Filtrar Carros</h3>
+<form method="GET" action="">
+    <label for="disponibilidade">Carro Disponível:</label>
+    <select name="disponibilidade" id="disponibilidade">
+        <option value="">Todos</option>
+        <option value="Disponível">Disponível</option>
+    </select>
+    <button type="submit">Filtrar</button>
+</form>
+
 <table>
     <tr>
         <th>ID</th>
@@ -52,8 +62,16 @@
             [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
         );
 
-        // Consulta para obter a lista de carros
+        // Construir a consulta SQL base
         $sql_carros = "SELECT * FROM carro";
+
+        // Verificar se um filtro de disponibilidade foi enviado
+        if (isset($_GET['disponibilidade']) && $_GET['disponibilidade'] !== '') {
+            $disponibilidade = $_GET['disponibilidade'];
+            $sql_carros .= " WHERE disponibilidade = '$disponibilidade'";
+        }
+
+        // Preparar e executar a consulta
         $stmt = $pdo->query($sql_carros);
 
         // Loop através dos resultados e exibição em uma tabela

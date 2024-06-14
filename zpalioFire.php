@@ -13,7 +13,20 @@
     <?php navbarLogado(); ?>
 
     <section>
- 
+ <div class="border">
+    <img id="front" src="/img/front_palio.jpg" alt="">
+    <img id="back" src="/img/back_palio.webp" alt="">
+    <br>
+    <div class="info">
+    <h3>Palio Fire</h3>
+    <p>Ano: 2021 </p>
+    <p>Modelo: Hatchback</p>
+     <p>Preço: R$ 700</p>
+    <p>Situação: Disponível</p>
+    
+  <a href="/cadastrarLocacao.php"> <button type="submit">Alugar</button></a>
+  </div>
+ </div>
     </section>
     <footer>
     

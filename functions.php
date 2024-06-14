@@ -20,15 +20,15 @@ function navbarPadrao() {
 function navbarLogado(){
      ?>
     <nav>
-    <img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo">
+   <a href="/indexLog.php"><img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo"></a> 
     <div class="link">
      <a href="/index.php" id="registrar">Sair</a>
      
     </div>
 </nav>
 <div class="nav2">
-    <a href="">Alugar</a>
-    <a href="">Catálago</a>
+    <a href="/cadastrarLocacao.php">Alugar</a>
+    <a href="#catalago">Catálago</a>
     <a href="">Contato</a>
     <a href="">Sobre</a>
 </div>
@@ -39,14 +39,14 @@ function navbarLogado(){
 function navbarFuncionario(){
   ?>
     <nav>
-        <img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo">
+       <a href="/indexFun.php"><img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo"></a> 
         <div class="link">
          <a href="/index.php" id="registrar">Sair</a>
          
         </div>
     </nav>
     <div class="nav2">
-        <a href="">Pedidos</a>
+        <a href="/listaPedidos.php">Pedidos</a>
         <a href="/listaCliente.php">Clientes</a>
         <a href="/listaFuncionario.php">Funcionarios</a>
         <a href="/listaCarro.php">Carros</a>

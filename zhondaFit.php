@@ -13,7 +13,20 @@
     <?php navbarLogado(); ?>
 
     <section>
- 
+ <div class="border">
+    <img id="front" src="/img/front_fit.jpg" alt="">
+    <img id="back" src="/img/back_fit.jpg" alt="">
+    <br>
+    <div class="info">
+    <h3>Honda Fit</h3>
+    <p>Ano: 2020 </p>
+    <p>Modelo: Hatchback</p>
+    <p>Preço: R$ 800</p>
+    <p>Situação: Disponível</p>
+    
+  <a href="/cadastrarLocacao.php"> <button type="submit">Alugar</button></a>
+  </div>
+ </div>
     </section>
     <footer>
     
