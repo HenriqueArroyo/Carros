@@ -29,7 +29,7 @@
         <input type="email" id="email" name="email" required><br>
 
         <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone"><br>
+        <input type="tel" id="phone_with_ddd" name="telefone"><br>
 
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha">
@@ -38,7 +38,15 @@
 
         <a href="loginFun.php">Acesso para Funcionários</a>
     </form>
+    
 
     <a href="index.php"><button id="voltar"  type="submit">Voltar</button></a>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('#phone_with_ddd').mask('(00) 0000-0000');
+</script>
+
 </body>
 </html>

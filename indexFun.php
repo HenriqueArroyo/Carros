@@ -11,8 +11,8 @@
 <body>
 <?php include_once 'functions.php'; ?>
     <?php navbarFuncionario(); ?>
-
-    <a href="extras.php" style="cursor: pointer;"><h2 style="color: blue;">EXTRAS</h2></a>
+    <a href="cadastroFuncionario.php" style="cursor: pointer;"><h2 style="color: blue;">Cadastro de Funcionario</h2></a>
+    <a href="extras.php" style="cursor: pointer;"><h2 style="color: blue;">Relatórios</h2></a>
       
     <footer>
     

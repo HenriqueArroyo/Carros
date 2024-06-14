@@ -30,7 +30,7 @@ try {
     $stmt->execute([$nome, $sobrenome, $cargo, $data_contratacao, $salario, $num_agencia, $cidade, $email, $senha]);
 
     // Redirecionar para uma página de sucesso
-    header("Location: cadastro_sucesso.php");
+    header("Location: indexFun.php");
     exit();
 } catch (PDOException $e) {
     // Se houver algum erro, exibir uma mensagem de erro

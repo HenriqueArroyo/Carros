@@ -2,7 +2,7 @@
 function navbarPadrao() {
     ?>
     <nav>
-        <img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo">
+    <a href="/index.php"><img id="logo" src="/img/SENAI-CAR-sem-fundo.png" alt="Logo"></a> 
         <div class="link">
             <a id="login" href="login.php">Entrar</a>
             <a id="registrar" href="cadastro.php">Registrar</a>
@@ -57,4 +57,21 @@ function navbarFuncionario(){
 <?php
 }
 
+function footer(){
 ?>
+  
+  <div class= "container-fluid" > 
+    <footer>
+	<p>&copy; 2023 - Todos os direitos reservados</p>
+	<nav>
+		<ul>
+			<li><a >Termos de uso</a></li>
+			<li><a >Política de privacidade</a></li>
+			<li><a >Sobre nós</a></li>
+			<li><a >Contato</a></li>
+		</ul>
+	</nav>
+</footer> 
+</div>
+<?php
+}

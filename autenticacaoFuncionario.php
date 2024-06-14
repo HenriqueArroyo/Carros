@@ -36,12 +36,12 @@ try {
             exit();
         } else {
             // Autenticação falhou - redireciona de volta para a página de login com mensagem de erro
-            header("Location: login_funcionario.php?msgErro=Credenciais inválidas");
+            header("Location: indexFun.php");
             exit();
         }
     } else {
         // Se os campos não foram submetidos, redireciona para a página de login
-        header("Location: login_funcionario.php");
+        header("Location: indexFun.php");
         exit();
     }
 } catch (PDOException $e) {

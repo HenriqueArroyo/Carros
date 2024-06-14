@@ -1,0 +1,23 @@
+footer {
+	background-color: rgb(220, 53, 69);
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	margin-top: 50px;  
+    
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+a { 
+    text-decoration: color(white);
+	color: #fff;
+}
